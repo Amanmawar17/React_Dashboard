@@ -13,6 +13,7 @@ var corsoption = {
     }
   }
 app.use(cors({
+    headers: {"Access-Control-Allow-Origin": "*"},
     credentials: true,
     optionsSuccessStatus: 200
 }, corsoption))
