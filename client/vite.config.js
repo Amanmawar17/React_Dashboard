@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite';
-import dotenv from 'dotenv';
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from "vite";
+import dotenv from "dotenv";
+import react from "@vitejs/plugin-react-swc";
 
 dotenv.config();
 
@@ -8,9 +8,11 @@ dotenv.config();
 export default defineConfig({
   server: {
     proxy: {
-      '/api' : `${process.env.VITE_API_URL ?? 'http://localhost:8000'}`,
+      "/api/v1/chart": {
+        target: `${process.env.VITE_API_URL ?? "http://localhost:8000"}`,
+        changeOrigin: true,
+      },
     },
-    },
-    plugins: [react()],
+  },
+  plugins: [react()],
 });
-
