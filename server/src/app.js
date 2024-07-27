@@ -13,7 +13,8 @@ var corsoption = {
     }
   }
 app.use(cors({
-    credentials: true
+    credentials: true,
+    optionsSuccessStatus: 200
 }, corsoption))
 
 app.use(express.json({limit: "900kb"}))
