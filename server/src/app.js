@@ -29,7 +29,7 @@ import dataRouter from './routes/data.routes.js'
 //routes declaration
 app.use("/api/v1", dataRouter)
 
-app.get("/health", async (req, res) => {
+app.get("/", async (req, res) => {
     res.send({ message: "health OK!" });
   });
   
